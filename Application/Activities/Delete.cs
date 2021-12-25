@@ -26,7 +26,7 @@ namespace Application.Activities
             }
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                var Activity = _context.Activities.FindAsync(request.Id);
+                var Activity = await _context.Activities.FindAsync(request.Id);
 
                 _context.Remove(Activity);
 
